@@ -1,0 +1,18 @@
+allprojects {
+	apply plugin: 'java'
+	apply plugin: 'idea'
+
+	repositories {
+		mavenCentral()
+	}
+}
+
+
+project(':consumer') {
+	version '1.0.0'
+}
+
+project(':provider') {
+	version '1.0.0'
+
+}
