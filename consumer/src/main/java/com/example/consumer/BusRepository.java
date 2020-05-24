@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import java.io.IOException;
 
 public class BusRepository {
-    public static final String API_URL = "http://localhost:8080/bus/";
+    public static final String API_URL = "http://localhost:8111/bus/";
 
     public BusDto getBus (String station, int nr) throws IOException {
         Retrofit retrofit = new Retrofit.Builder()

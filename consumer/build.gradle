@@ -24,12 +24,17 @@ dependencies {
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+		exclude group: 'junit', module: 'junit'
 	}
+
+	//Libraries for unit testing
+	testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.6.2")
+	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.2")
+	testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.6.2")
 
 	implementation 'com.squareup.retrofit2:retrofit:2.7.1'
 	implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
-	compile 'au.com.dius:pact-jvm-consumer-junit:4.0.5'
+	compile 'au.com.dius:pact-jvm-consumer-junit5:4.0.10'
 
 }
 

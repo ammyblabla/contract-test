@@ -10,7 +10,8 @@ import java.util.Random;
 public class BusController {
     @RequestMapping("/bus/{station}/{nr}")
     public BusDto bus(@PathVariable String station, @PathVariable int nr) {
-        int eta = getEtaBasedOnGpsAndOtherAdvancedStuff();
+//        int eta = getEtaBasedOnGpsAndOtherAdvancedStuff();
+        int eta = nr + 1;
         BusDto b = new BusDto(station, nr, eta);
         return b;
     }
