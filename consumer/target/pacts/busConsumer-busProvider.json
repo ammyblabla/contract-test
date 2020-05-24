@@ -14,10 +14,47 @@
       },
       "response": {
         "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=UTF-8"
+        },
         "body": {
-          "station": "HammerSmith",
-          "nr": 613,
-          "eta": 614
+          "bus": {
+            "eta": 100,
+            "nr": 613,
+            "station": "HammerSmith"
+          }
+        },
+        "matchingRules": {
+          "body": {
+            "$.bus.eta": {
+              "matchers": [
+                {
+                  "match": "number"
+                }
+              ],
+              "combine": "AND"
+            }
+          },
+          "header": {
+            "Content-Type": {
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "application/json(;\\s?charset=[\\w\\-]+)?"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        },
+        "generators": {
+          "body": {
+            "$.bus.eta": {
+              "type": "RandomInt",
+              "min": 0,
+              "max": 2147483647
+            }
+          }
         }
       },
       "providerStates": [
