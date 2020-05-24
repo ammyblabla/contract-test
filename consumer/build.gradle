@@ -34,7 +34,11 @@ dependencies {
 
 	implementation 'com.squareup.retrofit2:retrofit:2.7.1'
 	implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
+
+	compile group: 'au.com.dius', name: 'pact-jvm-provider', version: '4.0.10'
 	compile 'au.com.dius:pact-jvm-consumer-junit5:4.0.10'
+	compile group: 'au.com.dius', name: 'pact-jvm-provider-junit5-spring', version: '4.0.10'
+
 
 }
 

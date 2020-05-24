@@ -18,15 +18,13 @@
           "Content-Type": "application/json; charset=UTF-8"
         },
         "body": {
-          "bus": {
-            "eta": 100,
-            "nr": 613,
-            "station": "HammerSmith"
-          }
+          "eta": 614,
+          "nr": 613,
+          "station": "HammerSmith"
         },
         "matchingRules": {
           "body": {
-            "$.bus.eta": {
+            "$.eta": {
               "matchers": [
                 {
                   "match": "number"
@@ -44,15 +42,6 @@
                 }
               ],
               "combine": "AND"
-            }
-          }
-        },
-        "generators": {
-          "body": {
-            "$.bus.eta": {
-              "type": "RandomInt",
-              "min": 0,
-              "max": 2147483647
             }
           }
         }

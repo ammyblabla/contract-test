@@ -22,19 +22,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ConsumerTest {
     @Pact(provider = "busProvider", consumer = "busConsumer")
     public RequestResponsePact createPact(PactDslWithProvider builder) {
-        return builder.given("test state")
-                .uponReceiving("get bus")
+        return builder.given("get bus")
+                .uponReceiving("bus")
                     .path("/bus/HammerSmith/613")
                     .method("GET")
                 .willRespondWith()
                     .status(HttpStatus.OK.value())
                     .body(
                             new PactDslJsonBody()
-                            .object("bus")
                                 .stringValue("station", "HammerSmith")
                                 .numberValue("nr", 613)
                                 .numberType("eta")
-                            .closeObject()
                     )
                 .toPact();
     }
