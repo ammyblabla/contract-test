@@ -33,6 +33,4 @@ public class ProviderTest {
     @State("get bus")
     public void getBus() {
     }
-
-
 }
