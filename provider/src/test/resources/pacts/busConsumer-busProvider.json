@@ -7,7 +7,7 @@
   },
   "interactions": [
     {
-      "description": "get bus",
+      "description": "bus",
       "request": {
         "method": "GET",
         "path": "/bus/HammerSmith/613"
@@ -18,7 +18,7 @@
           "Content-Type": "application/json; charset=UTF-8"
         },
         "body": {
-          "eta": 614,
+          "eta": 100,
           "nr": 613,
           "station": "HammerSmith"
         },
@@ -44,11 +44,20 @@
               "combine": "AND"
             }
           }
+        },
+        "generators": {
+          "body": {
+            "$.eta": {
+              "type": "RandomInt",
+              "min": 0,
+              "max": 2147483647
+            }
+          }
         }
       },
       "providerStates": [
         {
-          "name": "test state"
+          "name": "get bus"
         }
       ]
     }

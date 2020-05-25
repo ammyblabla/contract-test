@@ -1,5 +1,5 @@
-#pactbroker:
-#  host: "localhost"
-#  port: "8115"
+pactbroker:
+  host: "localhost"
+  port: "9292"
 server:
   port: 8111

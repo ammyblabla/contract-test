@@ -4,6 +4,7 @@ import au.com.dius.pact.provider.junit.Consumer;
 import au.com.dius.pact.provider.junit.Provider;
 import au.com.dius.pact.provider.junit.State;
 import au.com.dius.pact.provider.junit.VerificationReports;
+import au.com.dius.pact.provider.junit.loader.PactBroker;
 import au.com.dius.pact.provider.junit.loader.PactFolder;
 import au.com.dius.pact.provider.junit5.HttpTestTarget;
 import au.com.dius.pact.provider.junit5.PactVerificationContext;
@@ -17,7 +18,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @Provider("busProvider")
 @Consumer("busConsumer")
 @ExtendWith(SpringExtension.class)
-@PactFolder("pacts")
+@PactBroker(host = "localhost", port="9292")
 public class ProviderTest {
     @BeforeEach
     void setUp(PactVerificationContext context) {
