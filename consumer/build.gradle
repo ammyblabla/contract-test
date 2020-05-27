@@ -39,6 +39,8 @@ dependencies {
 	compile group: 'au.com.dius', name: 'pact-jvm-provider', version: '4.0.10'
 	compile 'au.com.dius:pact-jvm-consumer-junit5:4.0.10'
 	compile group: 'au.com.dius', name: 'pact-jvm-provider-junit5-spring', version: '4.0.10'
+	compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+
 }
 
 pact {
