@@ -45,7 +45,7 @@ dependencies {
 
 pact {
 	publish {
-		pactDirectory = "$rootDir/consumer/target/pacts"
+		pactDirectory = "$rootDir/target/pacts"
 		pactBrokerUrl = 'http://localhost:9292'
 	}
 }
